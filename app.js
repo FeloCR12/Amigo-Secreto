@@ -52,7 +52,7 @@ function actualizarLista () {
 
 function sortearAmigo(){
 //Verifica que tenga suficientes amigos
-    if (amigos.length < 2) {
+    if (amigos.length <= 1) {
         alert('Necesita al menos 2 amigos para hacer el sorteo');
         return;
     }
@@ -69,8 +69,10 @@ function sortearAmigo(){
 //Actualiza la lista despues del sorteo    
     actualizarLista();
 
+
+    console.log(amigoSorteado)
 //Inabilita el boton de sortear cuando ya solo queda un participante     
-    if (amigos.length <= 1) {
+    if (amigos.length == 1) {
         document.getElementById('sortear').disabled = true;
         document.getElementById('resultado').innerHTML = '¡Ya no hay más amigos para sortear!';
     }
